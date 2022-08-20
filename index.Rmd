@@ -1,0 +1,66 @@
+---
+title: "index.Rmd"
+output: html_document
+date: "2022-08-20"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+source("analysis.r")
+source("chart1.r")
+source("chart2.r")
+source("chart3.r")
+source("aggregate_table.R")
+```
+
+
+## Introduction
+A dress code's main duty is to advise students and parents on what to wear to school and at any school-related events. Additionally, the requirement to adhere to the dress code is an important way for students to learn a skill that is tied to apparel and necessary for success in finding and keeping employment. In this project we will dive deep and analyze how much restrictions there are on clothing in school and see if uniforms are better options for students students.
+
+## State chart
+The chart below represents number of clothing length limits in Each State. The limits bar on the left is a guide on how to understand the chart. The yellow represents a really low quality and the red represents a high quality.
+
+```{r state map, echo = FALSE, warning = FALSE, message = FALSE }
+ggplot(state_shape_data) + 
+  geom_polygon(mapping = aes(x=long,y=lat,group=group,fill=num_limits)) +
+  scale_fill_continuous(low = 'yellow', high = 'red', labels = label_number_si()) +
+  coord_map() +
+  labs(title = 'Number of Clothing Length Limits in Each State', fill='Limits')
+```
+
+## Banned clothes in schools
+This chart below represents the amount of schools than a banned a certain clothings. This is data is shown by a stacked bar graph.
+I plan to use this to see how strict schools are about clothings and see if uniforms are a better alternative.
+```{r banned clothes, echo = FALSE, warning = FALSE, message = FALSE }
+ggplot(state_shape_data) + 
+  geom_polygon(mapping = aes(x=long,y=lat,group=group,fill=num_limits)) +
+  scale_fill_continuous(low = 'yellow', high = 'red', labels = label_number_si()) +
+  coord_map() +
+  labs(title = 'Number of Clothing Length Limits in Each State', fill='Limits')
+```
+
+## Table 
+This table below display only top 10 clothes banned from most schools in the state.
+I plan to use this to see how strict schools are about clothings and see if uniforms are a better alternative.
+```{r banned clothes, echo = FALSE, warning = FALSE, message = FALSE }
+View(tb1)
+```
+
+## Body clothings
+This chart below displays percentage of clothes banned according to body parts. There are different body parts represented by different colors in the pie chart and we can see that cleavage is the highest out of the list.
+```{r Boody percentage, echo = FALSE, warning = FALSE, message = FALSE }
+plot_ly(data = body_percentages, labels = ~item, values = ~n, type = "pie",
+             textinfo = "label+percent",
+             insidetextorientation = "radial")  %>% layout(title = 'Percentages of Clothes Banned According to Body Part')
+```
+
+## Summary
+
+From this data analysis we can conclude that there are restrictions on clothes all around the sate. So uniforms might be a better alternative because School uniforms may deter crime and increase student safety. Students are kept from becoming distracted by their clothing by wearing uniforms to school. When all of the students are dressed same, they are less concerned with how they appear and how they fit in with their peers; as a result, they can focus on their academic work. By leveling the playing field for all kids, school uniforms prevent bullying and peer pressure. When all students wear the same clothes, competition over fashion choices and jeering of those wearing less expensive or up-to-date attire can be minimized.The wearing of uniforms fosters community spirit, unity, and school pride. School uniforms might enhance behavior and attendance. For all the reasons listed above uniforms might be a better alternative for schools so students don't have to worry how they dress and if they meet the guidelines and simply focus on their education.
+
+
+
+
+
+
+
