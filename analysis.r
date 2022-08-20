@@ -1,3 +1,4 @@
+# load in packages
 library(dplyr)
 library(tidyverse)
 clothes_restrictions_df <- read.csv("https://raw.githubusercontent.com/the-pudding/data/master/dress-codes/length_restrictions.csv", stringsAsFactors = FALSE)

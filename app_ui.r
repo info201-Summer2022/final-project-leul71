@@ -1,3 +1,4 @@
+# load in packages
 library(shinythemes)
 source("app_server.R")
 clothing_limits <- read.csv("https://raw.githubusercontent.com/the-pudding/data/master/dress-codes/length_restrictions.csv", stringsAsFactors = FALSE)
@@ -79,6 +80,7 @@ Conclusion_Page <- tabPanel(
 
 fourth_page <- tabPanel(
   h4("FourthPage"),
+  p("whatever"),
   sidebarLayout(
     sidebarPanel(
       selectInput(
