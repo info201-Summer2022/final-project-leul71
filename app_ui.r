@@ -1,5 +1,4 @@
 # load in packages
-library(shiny) 
 library(shinythemes)
 source("app_server.R")
 clothing_limits <- read.csv("https://raw.githubusercontent.com/the-pudding/data/master/dress-codes/length_restrictions.csv", stringsAsFactors = FALSE)
@@ -10,8 +9,7 @@ first_page <- tabPanel(
   h1("Dress Code"),
   p("Introduction
 A dress code's main duty is to advise students and parents on what to wear to school and at any school-related events."),
-  p("Additionally, the requirement to adhere to the dress code is an important way for students to learn a skill that is tied to apparel and necessary for success in finding and keeping employment. 
-    In this project we will dive deep and analyze how much restrictions there are on clothing in school and see if uniforms are better options for students students."),
+  p("Additionally, the requirement to adhere to the dress code is an important way for students to learn a skill that is tied to apparel and necessary for success in finding and keeping employment. In this project we will dive deep and analyze how much restrictions there are on clothing in school and see if uniforms are better options for students students."),
   img(src = "https://blog.pearsoninternationalschools.com/wp-content/uploads/2021/11/AL1517034_1800x900-1132x670.jpg")
 )
 
