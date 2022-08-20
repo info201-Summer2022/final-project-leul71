@@ -6,6 +6,7 @@ library(forcats)
 #load csv file
 banned_clothes <- read.csv("https://raw.githubusercontent.com/the-pudding/data/master/dress-codes/clothes_percentages.csv", stringsAsFactors =  FALSE)
 
+# graphs
 #create chart
 banned_clothes %>%
  ggplot(aes(x=slug, y = n)) +

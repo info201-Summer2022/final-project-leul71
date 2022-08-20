@@ -16,6 +16,7 @@ state_shape <- map_data("state")
 clothing_limits <- clothing_limits %>% 
   mutate(state_fullname = tolower(state.name[match(School.State.Abbreviation, state.abb)]))
 
+# gather
 state_data <- clothing_limits %>% 
   group_by(state_fullname) %>% 
   summarize(num_limits = n())
