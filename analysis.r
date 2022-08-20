@@ -29,7 +29,6 @@ School_bann <- clothes_restrictions_df %>%
   nrow()
 
 # This displays how much pants are banned 
-#
 pant_bann <- clothes_restrictions_df %>% 
   select(School.Name, limits, length) %>%
   filter(limits == "pants") %>% 

@@ -2,7 +2,6 @@
 library(dplyr)
 library(ggplot2)
 
-# create table
 aggregate_table <- {
   top_banned_slugs <- read.csv("https://raw.githubusercontent.com/the-pudding/data/master/dress-codes/clothes_percentages.csv", stringsAsFactors =  FALSE) # read data
   tb1<- top_banned_slugs %>% group_by(slug) %>% # group by each item
